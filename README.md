@@ -110,6 +110,7 @@ setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789, level_info=False)
 ```python
 from loggerXio import setup_logger
 import logging
+import time
 
 # Setup with all default parameters
 logger = setup_logger(
@@ -124,6 +125,8 @@ logger = setup_logger(
 # Test logging
 logger.info("Hello from loggerXio!")
 print("This is a print message.")
+
+time.sleep(5) #Just for test script
 ```
 
 ---
