@@ -115,7 +115,6 @@ import logging
 logger = setup_logger(
     bot_token="YOUR_BOT_TOKEN",
     chat_id=123456789,
-    level=logging.INFO,
     time=True,
     show_logs=True,
     fetch_print=True,
