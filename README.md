@@ -19,7 +19,7 @@ pip install loggerXio
 from loggerXio import setup_logger
 
 # Replace with your bot token and chat ID
-logger = setup_logger("YOUR_BOT_TOKEN", 123456789)
+logger = setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789)
 ```
 
 ✅ That's it! 🎉 Now all logs and `print()` messages will be sent to your Telegram chat.
@@ -38,7 +38,7 @@ Your Telegram bot token (get it from [🤖 BotFather](https://t.me/BotFather)).
 
 **Example:**
 ```python
-setup_logger("YOUR_BOT_TOKEN", 123456789)
+setup_logger("bot_token=YOUR_BOT_TOKEN", chat_id=123456789)
 ```
 
 ---
@@ -48,7 +48,7 @@ Your Telegram chat ID (can be a group or private chat).
 
 **Example:**
 ```python
-setup_logger("YOUR_BOT_TOKEN", 987654321)
+setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=987654321)
 ```
 
 ---
@@ -59,7 +59,7 @@ Controls the minimum log level sent to Telegram. Default: `logging.INFO`.
 **Example:**
 ```python
 import logging
-setup_logger("YOUR_BOT_TOKEN", 123456789, level=logging.ERROR)
+setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789, level=logging.ERROR)
 ```
 
 ---
@@ -69,7 +69,7 @@ Whether to include a timestamp in your logs. Default: `True`.
 
 **Example (disable time):**
 ```python
-setup_logger("YOUR_BOT_TOKEN", 123456789, time=False)
+setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789, time=False)
 ```
 
 ---
@@ -79,7 +79,7 @@ Also print logs to your console. Default: `True`.
 
 **Example (disable console output):**
 ```python
-setup_logger("YOUR_BOT_TOKEN", 123456789, show_logs=False)
+setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789, show_logs=False)
 ```
 
 ---
@@ -89,7 +89,7 @@ Capture `print()` messages and send them to Telegram. Default: `True`.
 
 **Example (disable capturing print):**
 ```python
-setup_logger("YOUR_BOT_TOKEN", 123456789, fetch_print=False)
+setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789, fetch_print=False)
 ```
 
 ---
@@ -100,7 +100,7 @@ If `False`, only captures print messages. Default: `True`.
 
 **Example (capture only print statements):**
 ```python
-setup_logger("YOUR_BOT_TOKEN", 123456789, level_info=False)
+setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789, level_info=False)
 ```
 
 ---
@@ -113,8 +113,8 @@ import logging
 
 # Setup with all default parameters
 logger = setup_logger(
-    "YOUR_BOT_TOKEN",  # bot_token
-    123456789,         # chat_id
+    bot_token="YOUR_BOT_TOKEN",
+    chat_id=123456789,
     level=logging.INFO,
     time=True,
     show_logs=True,
@@ -133,7 +133,7 @@ print("This is a print message.")
 - If you disable `level_info=True`, normal logging levels won't be used — only `print()` messages will be captured.
 - Works in **private chats**, **groups**, **channels**.
 - Uses threads to avoid blocking your main program.
-
+- always when script start, first log will take few seconds for send log.
 ---
 
 ## ✨ Credits & Rights
