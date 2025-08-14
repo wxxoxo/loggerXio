@@ -53,17 +53,6 @@ setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=987654321)
 
 ---
 
-### 📊 **level** (logging level)
-Controls the minimum log level sent to Telegram. Default: `logging.INFO`.  
-
-**Example:**
-```python
-import logging
-setup_logger(bot_token="YOUR_BOT_TOKEN", chat_id=123456789, level=logging.ERROR)
-```
-
----
-
 ### ⏰ **time** (bool)
 Whether to include a timestamp in your logs. Default: `True`.  
 
